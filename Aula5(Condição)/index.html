@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <p>Velocidade do carro:<input type="number" name="vel" id="vel">
+    <input type="submit" onclick="calc()">
+    </p>
+    <div id="res"></div>
+
+    <script>
+        function calc() {
+            var velo = document.querySelector('input#vel')
+            var resu = document.querySelector('div#res')
+            var veloc = Number(velo.value)
+            if (veloc > 60) {
+                resu.innerHTML += `Sua velocidade foi de <strong>${veloc}</strong> <br><br>`
+                resu.innerHTML += `Você ultrapassou o limite permitido. <strong>MULTADO</strong>!`
+            } else {
+                resu.innerHTML += `Você estava dentro do limite de velocidade! <br><br>`
+                resu.innerHTML += `Sua velocidade foi de <strong>${veloc}</strong>`
+            }    
+        }    
+    </script>
+</body>
+</html>
