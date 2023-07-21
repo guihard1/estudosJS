@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(146, 168, 189);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1, p, div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seja bem-vindo</h1>
+    <p>Em que país você nasceu? <input type="text" name="nacionalidade" id="nacionalidade"><input type="submit" value="Enviar" onclick="fim()"></p>
+    <div id="res"></div>
+
+    <script>
+        var res = document.querySelector('div#res')
+        var nac = document.querySelector('input#nacionalidade')
+
+        function fim() {
+            var valorNac = nac.value.toLowerCase();
+            if (valorNac === 'brasil') {
+                res.innerHTML = `Você é <strong>brasileiro!</strong>`
+            } else {
+                res.innerHTML = `Você é <strong>estrangeiro</strong>`
+            }
+        }
+    </script>
+</body>
+</html>
